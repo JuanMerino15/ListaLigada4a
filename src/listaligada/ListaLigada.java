@@ -74,6 +74,17 @@ public class ListaLigada {
         }
     }
     
-    
+    //Método para eliminar un nodo del inicio
+    public int EliminarInicio(){
+        int elemento = head.getDato();
+        if(head == tail){
+            this.head=null;
+            this.tail=null;
+        }else{
+            head=head.getSiguiente();
+        }
+        return elemento;
+    }
     
 }
+        

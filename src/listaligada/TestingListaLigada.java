@@ -49,6 +49,11 @@ public class TestingListaLigada {
         entrada = bufer.readLine();
         int p = Integer.parseInt(entrada);
         lista.add(dato, p);
+        
+        System.out.println("--------------------------");
+        System.out.println("Eliminando un elemento del inicio de la lista");
+        dato = lista.EliminarInicio();
+        System.out.println("El elemento eliminado es: " + dato);
 
         System.out.println("---------------------------");
         System.out.println("Contenido de la lista");
