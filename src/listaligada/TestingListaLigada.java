@@ -54,6 +54,13 @@ public class TestingListaLigada {
         System.out.println("Eliminando un elemento del inicio de la lista");
         dato = lista.EliminarInicio();
         System.out.println("El elemento eliminado es: " + dato);
+        
+        System.out.println("--------------------------");
+        System.out.println("Eliminando un elemento del final de la lista");
+        dato = lista.EliminarFinal();
+        System.out.println("El elemento eliminado es: " + dato);
+
+       
 
         System.out.println("---------------------------");
         System.out.println("Contenido de la lista");

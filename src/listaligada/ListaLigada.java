@@ -76,15 +76,30 @@ public class ListaLigada {
     
     //Método para eliminar un nodo del inicio
     public int EliminarInicio(){
-        int elemento = head.getDato();
-        if(head == tail){
+        int elemento = head.getDato();//Declaro un entero que sera igual al dato de la cabecera
+        if(head == tail){ // este if es solo en caso de que haya un solo nodo
             this.head=null;
             this.tail=null;
         }else{
-            head=head.getSiguiente();
+            head=head.getSiguiente(); // Aqui es cuando ya son dos o mas nodos
         }
         return elemento;
     }
     
+    public int EliminarFinal(){
+        int elemento = tail.getDato();
+        if(head == tail){
+            this.tail=null;
+            this.head = null;
+        }else{
+            Nodo temporal = head; // este nodo temporal sirve para recorrer toda la lista
+            while(temporal.getSiguiente()!= tail){
+                temporal = temporal.getSiguiente();
+            }
+            tail = temporal;
+            tail = tail.getSiguiente()=null;
+        }
+        return elemento;
+    }
 }
         
