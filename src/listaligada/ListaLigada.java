@@ -50,6 +50,7 @@ public class ListaLigada {
     
     public void add(int dato, int posicion){
         Nodo nuevoNodo = new Nodo(dato);
+        this.size ++;
         int i = 1;
         actual = head;
         while(i<posicion -1){
@@ -86,6 +87,8 @@ public class ListaLigada {
         return elemento;
     }
     
+    
+    //Metodo para eliminar un nodo que esta al final de una lista
     public int EliminarFinal(){
         int elemento = tail.getDato();
         if(head == tail){
@@ -96,13 +99,55 @@ public class ListaLigada {
             while(temporal.getSiguiente()!= tail){ //se recorre toda la lista hasta el penultimo elemento
                 temporal = temporal.getSiguiente();
             }
-            
-            temporal= null;
-            tail = temporal;
+            //Guarda el nodo siguiente al nodo a eliminar
+            Nodo siguiente = temporal.getSiguiente().getSiguiente();
+            //Elimina el dato del nodo apuntando al siguiente
+            temporal.setSiguiente(siguiente);
             
             
         }
         return elemento;
+    }
+    
+    //Metodo para eliminar un nodo en especifico
+    public void eliminarEspecifico(int elemento){
+        if (head == tail && elemento==head.getDato()){
+            this.head = null;
+            this.tail = null;
+            
+        }else if(elemento == head.getDato()){
+            head = head.getSiguiente();
+        }else{
+            Nodo anterior,temporal;
+            anterior = head;
+            temporal = head.getSiguiente();
+            while(temporal!=null && temporal.getDato()!=elemento){
+                anterior=anterior.getSiguiente();
+                temporal = temporal.getSiguiente();
+            }
+            if(temporal!=null){ // Quiere decir que encontro el elemento y no llego a null
+                anterior.setSiguiente(temporal.getSiguiente());
+                if(temporal == tail ){
+                    tail = anterior; //si temporal llego hasta el ultimo nodo quiere decir que ese es el que se va a eliminar entonces se mueve tail al anterior
+                }
+                
+            }
+        }
+    }
+    
+    // Metodo para contar los nodos
+    public int conteoNodos(){
+       return size; 
+    }
+    
+    
+    //Metodo para buscar un elemento
+    public boolean Busqueda(int elemento){
+        Nodo temporal = head;
+        while(temporal !=null && temporal.getDato()!=elemento){
+            temporal=temporal.getSiguiente();
+        }
+        return temporal!=null;
     }
 }
         

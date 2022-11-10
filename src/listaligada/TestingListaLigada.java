@@ -59,8 +59,30 @@ public class TestingListaLigada {
         System.out.println("Eliminando un elemento del final de la lista");
         dato = lista.EliminarFinal();
         System.out.println("El elemento eliminado es: " + dato);
+        
+        System.out.println("--------------------------");
+        System.out.println("Eliminando un elemento especifico de la lista");
+        System.out.println("Ecribe el elemento que quieres elminar: ");
+        entrada = bufer.readLine();
+        int e = Integer.parseInt(entrada);
+        lista.eliminarEspecifico(e);
+        
+        
+        System.out.println("---------------------------");
+        System.out.println("Contando los nodos");
+        System.out.println("Cantidad de elementos en mi lista: " + lista.conteoNodos());
 
-       
+        System.out.println("----------------------------");
+        System.out.println("Buscando un elemento en la lista");
+        System.out.println("Ingresa el elemento que buscas: ");
+        entrada = bufer.readLine();
+        int a = Integer.parseInt(entrada);
+        lista.Busqueda(a);
+        if(lista.Busqueda(a) == true){
+            System.out.println("El elemento " + a + " Si esta en la lista");
+        }else{
+            System.out.println("El elmento " + a + " no se encuentra en la lista");
+        }
 
         System.out.println("---------------------------");
         System.out.println("Contenido de la lista");
