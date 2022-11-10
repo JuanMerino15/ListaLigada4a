@@ -93,11 +93,14 @@ public class ListaLigada {
             this.head = null;
         }else{
             Nodo temporal = head; // este nodo temporal sirve para recorrer toda la lista
-            while(temporal.getSiguiente()!= tail){
+            while(temporal.getSiguiente()!= tail){ //se recorre toda la lista hasta el penultimo elemento
                 temporal = temporal.getSiguiente();
             }
+            
+            temporal= null;
             tail = temporal;
-            tail = tail.getSiguiente()=null;
+            
+            
         }
         return elemento;
     }
